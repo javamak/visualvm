@@ -38,6 +38,7 @@ import java.util.Set;
 import javax.swing.Icon;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
 
 /**
  *
@@ -183,7 +184,13 @@ final class ExplorerNode extends DefaultMutableTreeNode implements Positionable 
 
     private void sortChildren() {
         if (getChildCount() == 0) return;
-        Collections.sort(children, comparator);
+        Collections.sort(children, new Comparator<TreeNode>() {
+            @Override
+            public int compare(TreeNode arg0, TreeNode arg1) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                return 0;
+            }
+        });
     }
 
 
